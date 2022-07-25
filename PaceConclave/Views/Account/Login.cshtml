@@ -1,0 +1,156 @@
+﻿
+@model PaceConclaveVM.Account.LoginVM
+@{ Layout = null; }
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+    <!--META CHARSET -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!--PAGE TITLE -->
+    <title>PTW</title>
+    <!-- MOBILE SPECIFIC -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <!-- FAVICON -->
+    <!-- CSS -->
+    <link rel="stylesheet" href="~/Account/css/application.min.css" media="all">
+    <link rel="stylesheet" href="~/Account/css/inputmask.css" media="all">
+    <link rel="stylesheet" href="~/Account/css/jquery.mCustomScrollbar.min.css" media="all">
+    <link rel="stylesheet" href="~/Account/css/tempusdominus-bootstrap-4.min.css">
+    <link rel="stylesheet" href="~/Account/css/fullcalendar.print.min.css" media="print">
+    <link href="~/Account/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="~/Account/css/ionicons.min.css" rel="stylesheet" type="text/css">
+    <!-- FONTS -->
+    @*<link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Roboto:100,300,300italic,400,400italic,700'>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,600">*@
+
+</head>
+<body class="text-gray-600 body-link-gray-800 bg-light">
+    <div class="row row-eq-columns no-gutters">
+        <div class="col-md-4 col-lg-7 col-xl-8">
+            <div>
+                <img src="/Account/img/1920x1920.JPG" srcset="/Account/img/1920x1920.JPG 320w, /Account/img/1920x1920.JPG 640w, /Account/img/1920x1920.JPG 1024w, /Account/img/1920x1920.JPG 1920w"
+                     sizes="(min-width: 768px) 100vh" class="img-vh-100" alt="login form">
+            </div>
+
+        </div>
+        <div class="col-md-8  col-lg-5 col-xl-4">
+            <div class="w-100 vh-100 d-flex flex-column bg-white">
+                <div class="p-5 my-auto">
+                    <div class="text-center mb-4">
+                        <a class="app-header-brand my-auto mx-auto" href="index.html">
+                            <img src="~/Account/img/logo-desktop-light.png" class="img-fluid" alt="PACE Logo">
+                        </a>
+                    </div>
+                    @*<div class="text-center mb-5">
+                            <h4 class="font-weight-bold text-dark">
+                                Please Log In, or
+                                <a href="@Url.Action("RegisterUser","Account")" class="text-primary">
+                                    <u>Sign Up</u>
+                                </a>
+                            </h4>
+                        </div>*@
+                    @using (Html.BeginForm("CheckUser", "Account", FormMethod.Post, new { id = "LoginInfo" }))
+                    {
+                        @Html.ValidationMessage("CustomError")
+                        @Html.AntiForgeryToken()
+                        <form id="main-contact-form" name="contact-form" method="post" action="#" class="d-flex flex-column">
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text bg-white">
+                                        <i class="fa fa-user-circle"></i>
+                                    </div>
+                                </div>
+                                @Html.TextBoxFor(m => m.EmailID, new { @id = "PaceID", @name = "PaceID", @tabindex = "1", @class = "form-control", @placeholder = "Pace ID", @required = "required" })<br />
+
+                            </div>
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text bg-white">
+                                        <i class="fa fa-lock"></i>
+                                    </div>
+                                </div>
+                                @Html.PasswordFor(m => m.Password, new { @id = "password", @name = "Password", @tabindex = "2", @class = "form-control", @placeholder = "Password", @required = "required" })<br />
+
+                            </div>
+                            <div class="mb-3">
+                                <a class="ml-3 text-primary" href="#">Forgot password?</a>
+                            </div>
+                            @*<div class="custom-control custom-checkbox ml-auto mb-4">
+                                    <input type="checkbox" class="custom-control-input" id="customCheck1">
+                                    <label class="custom-control-label" for="customCheck1">Remember me</label>
+                                </div>*@
+                            <div class="form-group">
+                                <button type="submit" name="submit" class="btn btn-primary btn-lg btn-block shadow-3">Login</button>
+                            </div>
+                        </form>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="~/Account/js/moment.min.js"></script>
+    @*<script src="~/js/moment-timezone.min.js"></script>
+        <script src="~/js/moment-timezone-with-data-2012-2022.min.js"></script>*@
+    <!-- JQUERY JAVASCRIPT -->
+    <script src="~/Account/js/jquery.min.js"></script>
+    <!-- BLOCK UI FOR RELOAD X-CARD EVENT JAVASCRIPT -->
+    <script src="~/Account/js/blockUI.min.js"></script>
+    <!-- I18NEXT TRANSLATION SYSTEM JAVASCRIPT -->
+    <!--<script src="~/js/i18next.min.js"></script>
+    <script src="~/js/jquery-i18next.min.js"></script>
+    <script src="~/js/i18nextXHRBackend.min.js"></script>
+    <script src="~/js/i18nextBrowserLanguageDetector.min.js"></script>-->
+    <!--DROPZONE JAVASCRIPT -->
+    <script src="~/Account/js/dropzone.js"></script>
+    <script>
+        Dropzone.autoDiscover = false;
+    </script>
+    <!-- JQUERY DRAG AND DROP JAVASCRIPT -->
+    <script src="~/Account/js/jquery-ui.min.js"></script>
+    <!-- CALENDAR JAVASCRIPT -->
+    <script src="~/Account/js/fullcalendar.min.js"></script>
+    <script src="~/Account/js/gcal.min.js"></script>
+    <script src="~/Account/js/locale-all.js"></script>
+    <!-- DATE PICKER JAVASCRIPT -->
+    <script src="~/Account/js/tempusdominus-bootstrap-4.min.js"></script>
+    <!-- INPUT MASK JAVASCRIPT -->
+    <script src="~/Account/js/jquery.inputmask.bundle.js"></script>
+    <!-- IE COVER JAVASCRIPT -->
+    <script src="~/Account/js/modernizr-custom.min.js"></script>
+    <!-- SPARKLINE JAVASCRIPT -->
+    <script src="~/Account/js/jquery.sparkline.min.js"></script>
+    <!-- BOOTSTRAP AND APPLICATION JAVASCRIPT -->
+    <script src="~/Account/js/bootstrap.bundle.min.js"></script>
+    <script src="~/Account/js/application.js"></script>
+    <!-- CUSTOM SCROLLBAR JAVASCRIPT -->
+    <script src="~/Account/js/jquery.mCustomScrollbar.concat.min.js"></script>
+    <!-- CHART.JS JAVASCRIPT -->
+    <script src="~/Account/js/Chart.bundle.min.js"></script>
+    <!-- TOASTR FEEDBACK JAVASCRIPT -->
+    <script src="~/Account/js/toastr.min.js"></script>
+    <script src="~/Account/js/promise.min.js"></script>
+    <!-- SWEETALERT FEEDBACK JAVASCRIPT -->
+    <script src="~/Account/js/sweetalert2.min.js"></script>
+    <script>
+        $(window).on('load', function () {
+         var msg = JSON.parse('@Html.Raw(Json.Serialize(TempData["LoginError"]))');
+            if (msg !== "" && msg != null)
+            {
+                 toastr.error(msg, 'Error');
+            }
+        });
+
+    </script>
+    <script>
+        $(window).on('load', function () {
+         var msgone = JSON.parse('@Html.Raw(Json.Serialize(TempData["RegisterSucess"]))');
+            if (msgone !== "" && msgone != null)
+            {
+                toastr.success(msgone, 'Sucess !!');
+            }
+        });
+
+    </script>
+</body>
+</html>
