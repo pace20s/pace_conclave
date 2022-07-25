@@ -75,15 +75,6 @@ namespace PaceConclave.Controllers
 
 
 
-
-
-
-
-
-
-
-
-
         //public ActionResult Subscription()
         //{
         //    TempData["RegisterError"] = "";
