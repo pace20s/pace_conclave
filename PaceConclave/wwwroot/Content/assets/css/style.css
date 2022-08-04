@@ -82,9 +82,11 @@ body {
     background: #f6fdf5
 }
 
-    body.version-2 {
-        color: #828282
-    }
+
+
+body.version-2 {
+    color: #828282
+}
 
 b, strong {
     font-weight: bold
