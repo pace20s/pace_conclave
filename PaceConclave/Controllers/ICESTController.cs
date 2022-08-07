@@ -82,6 +82,16 @@ namespace PaceConclave.Controllers
             return View();
         }
 
+        public ActionResult Advisor()
+        {
+            ViewData["advisor"] = true;
+            return View();
+        }
+        public ActionResult Technical()
+        {
+            ViewData["technical"] = true;
+            return View();
+        }
 
         public ActionResult Registerformsubmit(RegisterVM rig)
         {
