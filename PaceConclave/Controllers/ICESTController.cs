@@ -93,6 +93,12 @@ namespace PaceConclave.Controllers
             return View();
         }
 
+        public ActionResult Organising()
+        {
+            ViewData["organising"] = true;
+            return View();
+        }
+
         public ActionResult Registerformsubmit(RegisterVM rig)
         {
             //Save image to wwwroot/ICEST/Image
